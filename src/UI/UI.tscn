@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://kjw4pp7181xy"]
+
+[ext_resource type="PackedScene" uid="uid://drocuik2oq06j" path="res://UI/healthbar/healthbar.tscn" id="1_a2fbe"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PlayerHealthbarContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PlayerHealthbar" parent="Control/MarginContainer/PlayerHealthbarContainer" instance=ExtResource("1_a2fbe")]
+layout_mode = 2
+
+[node name="BossHealthbarContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="BossHealthbar" parent="Control/MarginContainer/BossHealthbarContainer" instance=ExtResource("1_a2fbe")]
+layout_mode = 2

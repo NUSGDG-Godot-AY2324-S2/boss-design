@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byyu2xw515l6g"]
+[gd_scene load_steps=22 format=3 uid="uid://byyu2xw515l6g"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_j2of6"]
 [ext_resource type="Texture2D" uid="uid://c0xwgykddd1h8" path="res://assets/pixel-platform/Main Characters/Mask Dude/Idle (32x32).png" id="1_m7mas"]
@@ -50,6 +50,30 @@ region = Rect2(288, 0, 32, 32)
 atlas = ExtResource("1_m7mas")
 region = Rect2(320, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf8x4"]
+atlas = ExtResource("1_m7mas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqd8i"]
+atlas = ExtResource("1_m7mas")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r787f"]
+atlas = ExtResource("1_m7mas")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f13u"]
+atlas = ExtResource("1_m7mas")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w05nd"]
+atlas = ExtResource("1_m7mas")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aupy8"]
+atlas = ExtResource("1_m7mas")
+region = Rect2(320, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wland"]
 animations = [{
 "frames": [{
@@ -89,6 +113,47 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf8x4")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqd8i")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r787f")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f13u")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w05nd")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aupy8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"taking_damage",
+"speed": 10.0
 }]
 
 [node name="player" type="CharacterBody2D"]
@@ -96,11 +161,20 @@ collision_mask = 4
 script = ExtResource("1_j2of6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.883958, 1)
 shape = SubResource("RectangleShape2D_8bf4h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -7)
-scale = Vector2(2.4375, 2.4375)
+scale = Vector2(2.20964, 2.20964)
 sprite_frames = SubResource("SpriteFrames_wland")
-animation = &"idle"
+animation = &"taking_damage"
 autoplay = "idle"
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
