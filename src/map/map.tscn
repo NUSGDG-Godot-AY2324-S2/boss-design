@@ -1,0 +1,82 @@
+[gd_scene load_steps=16 format=3 uid="uid://tq7ajpiuwynf"]
+
+[ext_resource type="Texture2D" uid="uid://di2ik3wsr57fy" path="res://assets/pixel-platform/Background/Blue.png" id="1_5r6l6"]
+[ext_resource type="Texture2D" uid="uid://bkshwhrjin0f0" path="res://assets/pixel-platform/Background/Brown.png" id="2_e8llw"]
+[ext_resource type="Texture2D" uid="uid://dw8d83h7jut1g" path="res://assets/pixel-platform/Background/Gray.png" id="3_yubeu"]
+[ext_resource type="Texture2D" uid="uid://dts5s2kqyok7a" path="res://assets/pixel-platform/Background/Green.png" id="4_rnatp"]
+[ext_resource type="Texture2D" uid="uid://bbxs1a4p7fyjs" path="res://assets/pixel-platform/Background/Pink.png" id="5_7x01a"]
+[ext_resource type="Texture2D" uid="uid://gww5ic2kwywj" path="res://assets/pixel-platform/Background/Purple.png" id="6_mvt15"]
+[ext_resource type="Texture2D" uid="uid://c4qcm0mr2my03" path="res://assets/pixel-platform/Background/Yellow.png" id="7_642q1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xucow"]
+texture = ExtResource("1_5r6l6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xre8g"]
+texture = ExtResource("2_e8llw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m0xa"]
+texture = ExtResource("3_yubeu")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls62n"]
+texture = ExtResource("4_rnatp")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj0fm"]
+texture = ExtResource("5_7x01a")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onb4i"]
+texture = ExtResource("6_mvt15")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifgn1"]
+texture = ExtResource("7_642q1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_uhqt3"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_xucow")
+sources/1 = SubResource("TileSetAtlasSource_xre8g")
+sources/2 = SubResource("TileSetAtlasSource_8m0xa")
+sources/3 = SubResource("TileSetAtlasSource_ls62n")
+sources/4 = SubResource("TileSetAtlasSource_dj0fm")
+sources/5 = SubResource("TileSetAtlasSource_onb4i")
+sources/6 = SubResource("TileSetAtlasSource_ifgn1")
+
+[node name="map" type="TileMap"]
+tile_set = SubResource("TileSet_uhqt3")
+format = 2
+layer_0/tile_data = PackedInt32Array(589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0)

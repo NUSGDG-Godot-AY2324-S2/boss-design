@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq2i4l0fuxfuu"]
+
+[ext_resource type="PackedScene" uid="uid://tq7ajpiuwynf" path="res://map/map.tscn" id="1_v3uyd"]
+[ext_resource type="PackedScene" uid="uid://byyu2xw515l6g" path="res://player/player.tscn" id="2_xvs5x"]
+[ext_resource type="PackedScene" uid="uid://de0ha5fm2vob7" path="res://boss/boss.tscn" id="3_4nhgd"]
+
+[node name="game" type="Node2D"]
+
+[node name="map" parent="." instance=ExtResource("1_v3uyd")]
+
+[node name="player" parent="." instance=ExtResource("2_xvs5x")]
+position = Vector2(170, 140)
+
+[node name="boss" parent="." instance=ExtResource("3_4nhgd")]
+position = Vector2(1038, 541)
